@@ -1,5 +1,5 @@
 # Bybit Scalp Bot V2 <a href="https://github.com/ryu878/bybit_scalp_bot/blob/main/LICENSE.MD">[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Generic badge](https://img.shields.io/badge/Python-3.8+-<COLOR>.svg)](https://shields.io/)
-(with binance data to check moving averages)
+(with binance data to check moving averages) [![Github all releases](https://img.shields.io/github/downloads/Naereen/StrapDown.js/total.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
 
 ![image](https://user-images.githubusercontent.com/81808867/198848493-ef94a711-b3e0-4789-bbc2-ce3e11236c63.png)
 
