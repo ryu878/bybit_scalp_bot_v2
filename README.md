@@ -28,5 +28,5 @@ or join my Discord group here: https://discord.gg/zSw58e9Uvf
 
 <a href="https://discord.gg/zSw58e9Uvf">![image](https://user-images.githubusercontent.com/81808867/166115186-70de12b2-39fd-4eda-bb12-c1d8bec24ac6.png)</a>
 
-To start trading on Bybit please register here: https://www.bybit.com/en-US/invite?ref=P11NJW
+To start trading on Bybit please register here: https://www.bybit.com/en-US/invite?ref=P11NJW<br>
 On Binance here: https://binance.com
