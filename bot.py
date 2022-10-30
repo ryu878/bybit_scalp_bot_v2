@@ -29,22 +29,73 @@ from colorama import init, Fore, Back, Style
 
 
 
-enable_trading = input('Enable Trading? (0 - Disable, 1 - Enable) ')
-symbol = input('What Asset To trade? ')
-symbol = (symbol+'USDT').upper()
-# symbol = 'XRPUSDT'
-min_lot_size = input('Start lot size? ')
-# min_lot_size = 1
-
-
 exchange = ccxt.bybit({'apiKey':api_key,'secret':api_secret})
 binance_client = Client(binance_api_key, binance_api_secret)
 client = usdt_perpetual.HTTP(endpoint=endpoint,api_key=api_key,api_secret=api_secret)
 
 
-terminal_title = symbol+' Bybit Bot'
-print(f'\33]0;{terminal_title}\a', end='', flush=True)
-print(terminal_title,'working...')
+enable_trading = input('Enable Trading? (0 - Disable, 1 - Enable) ')
+symbol = input('What Asset To trade? ')
+symbol = (symbol+'USDT').upper()
+
+
+def get_balance():
+    my_balance = exchange.fetchBalance()
+    global available_balance
+    global realised_pnl
+    global equity
+    global wallet_balance
+    global unrealised_pnl
+    available_balance = float(my_balance['info']['result']['USDT']['available_balance'])
+    realised_pnl = my_balance['info']['result']['USDT']['realised_pnl']
+    unrealised_pnl = my_balance['info']['result']['USDT']['unrealised_pnl']
+    wallet_balance = my_balance['info']['result']['USDT']['wallet_balance']
+    equity = my_balance['info']['result']['USDT']['equity']
+
+
+def get_orderbook():
+
+    orderbook = exchange.fetchOrderBook(symbol=symbol, limit=10)
+    global ask
+    global bid
+    bid = orderbook['bids'][0][0] if len (orderbook['bids']) > 0 else None
+    ask = orderbook['asks'][0][0] if len (orderbook['asks']) > 0 else None
+
+
+def get_decimals():
+
+    symbol_decimals  = client.query_symbol()
+    for decimal in symbol_decimals['result']:
+        if decimal['name'] == symbol:
+            global decimals
+            global leverage
+            global tick_size
+            global min_trading_qty
+            global qty_step
+            decimals = decimal['price_scale']
+            leverage = decimal['leverage_filter']['max_leverage']
+            tick_size = decimal['price_filter']['tick_size']
+            min_trading_qty = decimal['lot_size_filter']['min_trading_qty']
+            qty_step = decimal['lot_size_filter']['qty_step']
+
+
+get_decimals()
+
+
+print('Min lot size for',symbol,'is:',min_trading_qty)
+print('Max leverage is:',leverage)
+
+
+get_balance()
+time.sleep(0.01)
+get_orderbook()
+
+what_1x_is = round((float(equity) / float(ask)) / (100 / float(leverage)),2)
+
+print('1x size for',symbol,'is:',what_1x_is)
+
+
+min_lot_size = input('What size to trade? ')
 
 
 started = datetime.datetime.now().strftime('%H:%M:%S')
@@ -108,23 +159,6 @@ def cancel_close_orders():
             client.cancel_active_order(symbol=symbol, order_id=order['order_id'])
 
 
-def get_decimals():
-
-    symbol_decimals  = client.query_symbol()
-    for decimal in symbol_decimals['result']:
-        if decimal['name'] == symbol:
-            global decimals
-            global leverage
-            global tick_size
-            global min_trading_qty
-            global qty_step
-            decimals = decimal['price_scale']
-            leverage = decimal['leverage_filter']['max_leverage']
-            tick_size = decimal['price_filter']['tick_size']
-            min_trading_qty = decimal['lot_size_filter']['min_trading_qty']
-            qty_step = decimal['lot_size_filter']['qty_step']
-
-
 def get_close_orders():
     orders = client.get_active_order(symbol=symbol,limit=200)
 
@@ -171,15 +205,6 @@ try:
 except Exception as e:
     get_linenumber()
     print(line_number, 'exeception: {}'.format(e))
-
-
-def getOrderBook():
-
-    orderbook = exchange.fetchOrderBook(symbol=symbol, limit=10)
-    global ask
-    global bid
-    bid = orderbook['bids'][0][0] if len (orderbook['bids']) > 0 else None
-    ask = orderbook['asks'][0][0] if len (orderbook['asks']) > 0 else None
 
 #------------------------------
 
@@ -308,20 +333,6 @@ def get_ema_240_5_binance():
 
 # ------------------------------
 
-def get_balance():
-    my_balance = exchange.fetchBalance()
-    global available_balance
-    global realised_pnl
-    global equity
-    global wallet_balance
-    global unrealised_pnl
-    available_balance = float(my_balance['info']['result']['USDT']['available_balance'])
-    realised_pnl = my_balance['info']['result']['USDT']['realised_pnl']
-    unrealised_pnl = my_balance['info']['result']['USDT']['unrealised_pnl']
-    wallet_balance = my_balance['info']['result']['USDT']['wallet_balance']
-    equity = my_balance['info']['result']['USDT']['equity']
-
-
 def get_position():
     positions = client.my_position(symbol=symbol)
     for position in positions['result']:
@@ -340,15 +351,6 @@ def get_position():
 
 
 while True:
-
-    try:
-        # Get Orderbook data
-        getOrderBook()   
-    except Exception as e:
-        get_linenumber()
-        print(line_number, 'exeception: {}'.format(e))
-        pass
-
 
     try:
         # Get EMAs
@@ -391,6 +393,16 @@ while True:
     good_ma_order_long = ma_order_long_1m == True and ma_order_long_5m == True
     good_ma_order_shrt = ma_order_shrt_1m == True and ma_order_shrt_5m == True
 
+
+    try:
+        # Get Orderbook data
+        get_orderbook()   
+    except Exception as e:
+        get_linenumber()
+        print(line_number, 'exeception: {}'.format(e))
+        pass
+    
+
     good_shrt_conditions = good_ma_order_shrt == True and ask > ema_3_5_high_bybit and ask > ema_3_1_high_bybit
     # good_long_conditions = good_ma_order_long == True and bid < ema_3_5_low_bybit and bid < ema_3_1_low_bybit
     good_long_conditions = good_ma_order_long == True and ask > ema_3_5_high_bybit and ask > ema_3_1_high_bybit
@@ -399,17 +411,6 @@ while True:
     # good_trade_conditions = good_shrt_conditions == True or good_long_conditions == True
     good_short_trade_conditions = ask > ema_3_1_high_bybit
 
-    print('╭─────────────────────────────────────────────╮')
-    print('│          Ryuryu\'s bybit bot v2.12           │')
-    print('├─────────────────────────────────────────────┤')
-    print('│               Asset:',symbol)
-    print('│            Lot size:',min_lot_size)
-    print('├─────────────────────────────────────────────┤')
-
-    if enable_trading == '1':
-        print(Fore.GREEN +'│             Trading: Enabled'+ Style.RESET_ALL)
-    if enable_trading == '0':
-        print(Fore.RED +'│             Trading: Disabled'+ Style.RESET_ALL)
 
     try:
         get_balance()
@@ -418,6 +419,24 @@ while True:
         get_linenumber()
         print(line_number, 'exeception: {}'.format(e))
         pass
+
+
+    what_1x_is = round((float(equity) / float(ask)) / (100 / float(leverage)),2)
+    max_size = what_1x_is
+
+
+    print('╭─────────────────────────────────────────────╮')
+    print('│          Ryuryu\'s bybit bot v2.12           │')
+    print('├─────────────────────────────────────────────┤')
+    print('│               Asset:',symbol)
+    print('│        Max leverage:',leverage)
+    print('│            Lot size:',min_lot_size,'| 1x:',what_1x_is)
+    print('├─────────────────────────────────────────────┤')
+
+    if enable_trading == '1':
+        print(Fore.GREEN +'│             Trading: Enabled'+ Style.RESET_ALL)
+    if enable_trading == '0':
+        print(Fore.RED +'│             Trading: Disabled'+ Style.RESET_ALL)
 
     profit = 100 - ((float(available_balance) - float(realised_pnl)) * 100 / float(available_balance))
     profit = round(profit,2)
@@ -463,7 +482,7 @@ while True:
 
     ''' First Short entry '''
 
-    if enable_trading == '1' and sell_position_size == 0 and good_short_trade_conditions == True:
+    if enable_trading == '1' and sell_position_size == 0 and sell_position_size < max_size and good_short_trade_conditions == True:
 
         try:
             place_first_entry_market_order = client.place_active_order(\
@@ -566,7 +585,7 @@ while True:
         print('│  additional order...')
 
 
-    if sell_position_size != 0 and good_short_trade_conditions == True and not_good_short_take_profit == True:
+    if sell_position_size != 0 and sell_position_size < max_size and good_short_trade_conditions == True and not_good_short_take_profit == True:
 
         print('├─────────────────────────────────────────────┤')
         print('│  Placing order ⇲')
