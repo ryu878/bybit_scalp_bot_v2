@@ -1,4 +1,4 @@
-# Bybit Trading Bot
+# Bybit Trading Bot v2.13
 # (C) 2022 Ryan Hayabusa 2022 
 # Github: https://github.com/ryu878 
 # Discord: ryuryu#4087
