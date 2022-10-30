@@ -92,8 +92,9 @@ get_orderbook()
 
 what_1x_is = round((float(equity) / float(ask)) / (100 / float(leverage)),2)
 
-print('1x size for',symbol,'is:',what_1x_is)
-
+print('        1x size:',what_1x_is)
+print('        0.1x is:',what_1x_is/10)
+print('          0.01x:',what_1x_is/100)
 
 min_lot_size = input('What size to trade? ')
 
@@ -401,7 +402,7 @@ while True:
         get_linenumber()
         print(line_number, 'exeception: {}'.format(e))
         pass
-    
+
 
     good_shrt_conditions = good_ma_order_shrt == True and ask > ema_3_5_high_bybit and ask > ema_3_1_high_bybit
     # good_long_conditions = good_ma_order_long == True and bid < ema_3_5_low_bybit and bid < ema_3_1_low_bybit
