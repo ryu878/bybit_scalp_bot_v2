@@ -10,7 +10,6 @@ You need bybit and binance accounts and APIs.
 
 Run pip install to install:
 - ta
-- time
 - ccxt
 - pandas
 - pybit
