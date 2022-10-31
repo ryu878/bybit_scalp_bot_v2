@@ -3,7 +3,7 @@
 [![Latest release](https://badgen.net/github/release/Naereen/Strapdown.js)](https://aadresearch.xyz)
 
 
-Max size set equal to 1x leverage, but you can change it in the code. Also bot will go only shorts. You can also add long support (just copy-paste the trading logic the way you want).
+Max size set equal to 1x leverage, but you can change it in the code. Also bot will go only shorts. You can add long support (just copy-paste the trading logic the way you want).
 
 ![image](https://user-images.githubusercontent.com/81808867/198848493-ef94a711-b3e0-4789-bbc2-ce3e11236c63.png)
 
