@@ -1,5 +1,8 @@
 # Bybit Scalp Bot V2.13 <a href="https://github.com/ryu878/bybit_scalp_bot/blob/main/LICENSE.MD">[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Generic badge](https://img.shields.io/badge/Python-3.8+-<COLOR>.svg)](https://shields.io/) [![GitHub stars](https://img.shields.io/github/stars/Naereen/StrapDown.js.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/Naereen/StrapDown.js/stargazers/)
 (with binance data to check moving averages)
+  
+[![Latest release](https://badgen.net/github/release/Naereen/Strapdown.js)](https://github.com/Naereen/Strapdown.js/releases)
+
 
 Max size set equal to 1x leverage, but you can change it in the code. Also bot will go only shorts. You can also add long support (just copy-paste the trading logic the way you want).
 
