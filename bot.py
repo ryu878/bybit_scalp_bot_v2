@@ -459,12 +459,6 @@ while True:
 
     try:
         get_position()
-
-        if sell_position_size > (float(min_lot_size) * 100):
-            min_lot_size = min_lot_size * 2
-        else:
-            min_lot_size = min_lot_size
-
         time.sleep(0.01)
     except Exception as e:
         get_linenumber()
