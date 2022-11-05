@@ -500,7 +500,7 @@ while True:
     
     ''' Cancel Entry order '''
 
-    if ask < ema_3_1_high_bybit or ask < ema_3_5_high_bybit:
+    if float(ask) < float(ema_3_1_high_bybit) or float(ask) < float(ema_3_5_high_bybit):
         
         try:
             cancel_entry_orders()
