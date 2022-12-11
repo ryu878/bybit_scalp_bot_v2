@@ -1,7 +1,8 @@
-# Bybit Trading Bot v2.13
+# Bybit Trading Bot v2.14
 # (C) 2022 Ryan Hayabusa 2022 
 # Github: https://github.com/ryu878 
 # Discord: ryuryu#4087
+# Web: https://aadresearch.xyz
 #######################################################################################################
 # pip install -U pip
 # pip install pybit
@@ -100,39 +101,6 @@ min_lot_size = input('What size to trade? ')
 
 
 started = datetime.datetime.now().strftime('%H:%M:%S')
-
-
-ws_perp = usdt_perpetual.WebSocket(
-    test=False,
-    api_key=api_key,
-    api_secret=api_secret,
-    domain=domain
-)
-
-
-def trades(trades):
-
-    for trade in trades['data']:
-        if trade['side'] == 'Sell':
-            global asset
-            global sel_vol
-            global buy_vol
-            global price
-            global trade_time_ms
-            asset = trade['symbol']
-            sel_vol = trade['size']
-            buy_vol = 0
-            price = trade['price']
-            trade_time_ms = trade['trade_time_ms']
-            print(' ↓ Sell',sel_vol,asset,price)
-
-        if trade['side'] == 'Buy':
-            asset = trade['symbol']
-            buy_vol = trade['size']
-            sel_vol = 0
-            price = trade['price']
-            trade_time_ms = trade['trade_time_ms']
-            print(' ↑ Buy',buy_vol,asset,price)
 
 
 def get_linenumber():
@@ -427,7 +395,7 @@ while True:
 
 
     print('╭─────────────────────────────────────────────╮')
-    print('│          Ryuryu\'s bybit bot v2.12           │')
+    print('│          Ryuryu\'s bybit bot v2.14           │')
     print('├─────────────────────────────────────────────┤')
     print('│               Asset:',symbol)
     print('│        Max leverage:',leverage)
