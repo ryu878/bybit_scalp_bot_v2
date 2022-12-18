@@ -40,6 +40,14 @@ symbol = input('What Asset To trade? ')
 symbol = (symbol+'USDT').upper()
 
 
+
+def get_linenumber():
+
+    cf = currentframe()
+    global line_number
+    line_number = cf.f_back.f_lineno
+
+    
 def get_balance():
     my_balance = exchange.fetchBalance()
     global available_balance
@@ -80,16 +88,34 @@ def get_decimals():
             qty_step = decimal['lot_size_filter']['qty_step']
 
 
-get_decimals()
+try:
+    get_decimals()
+except Exception as e:
+    get_linenumber()
+    print(line_number, 'exeception: {}'.format(e))
+    pass
 
 
 print('Min lot size for',symbol,'is:',min_trading_qty)
 print('Max leverage is:',leverage)
 
 
-get_balance()
+try:
+    get_balance()
+except Exception as e:
+    get_linenumber()
+    print(line_number, 'exeception: {}'.format(e))
+    pass
+
 time.sleep(0.01)
-get_orderbook()
+
+
+try:
+    get_orderbook()
+except Exception as e:
+    get_linenumber()
+    print(line_number, 'exeception: {}'.format(e))
+
 
 what_1x_is = round((float(equity) / float(ask)) / (100 / float(leverage)),2)
 
@@ -101,13 +127,6 @@ min_lot_size = input('What size to trade? ')
 
 
 started = datetime.datetime.now().strftime('%H:%M:%S')
-
-
-def get_linenumber():
-
-    cf = currentframe()
-    global line_number
-    line_number = cf.f_back.f_lineno
 
 
 def cancel_entry_orders():
