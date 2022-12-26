@@ -12,7 +12,7 @@ You need bybit and binance accounts and APIs.
 
 Run pip install to install:
 - ta
-- ccxt
+- pip install ccxt==2.0.90 - important! Will not work with never versions of ccxt. Will fix soon.
 - pandas
 - pybit
 - python-binance
