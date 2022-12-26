@@ -10,7 +10,7 @@
 # pip install pandas
 # pip install ta
 # pip install python-binance
-# pip install ccxt
+# pip install ccxt==2.0.90
 
 import os
 import ta
