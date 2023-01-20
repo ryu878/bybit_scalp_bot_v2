@@ -10,13 +10,19 @@ Max size set equal to 1x leverage, but you can change it in the code. Also bot w
 ## Requirements
 You need bybit and binance accounts and APIs.
 
-Run pip install to install:
-- ta
-- pip install ccxt==2.0.90 - important! Will not work with never versions of ccxt. Will fix soon.
-- pandas
-- pybit
-- python-binance
-- colorama
+Install libraries:
+<code>pip install ta</code>
+
+<code>pip install  ccxt==2.0.90</code>
+
+<code>pip install pandas</code>
+
+<code>pip install pybit</code>
+
+<code>pip install python-binance</code>
+
+<code>pip install colorama</code>
+
 
 ## Disclaimer
 <hr>
