@@ -14,7 +14,7 @@ Install libraries:
   
 <code>pip install ta</code>
 
-<code>pip install  ccxt==2.0.90</code>
+<code>pip install ccxt==2.0.90</code>
 
 <code>pip install pandas</code>
 
