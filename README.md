@@ -11,6 +11,7 @@ Max size set equal to 1x leverage, but you can change it in the code. Also bot w
 You need bybit and binance accounts and APIs.
 
 Install libraries:
+  
 <code>pip install ta</code>
 
 <code>pip install  ccxt==2.0.90</code>
