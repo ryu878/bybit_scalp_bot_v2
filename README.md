@@ -35,12 +35,11 @@ Under no circumstances will we be responsible or liable for any claims, damages,
 <hr>
 
 ## Contacts
-Feel free to contact me via Discord: ryuryu#4087
-or join my Discord group here: https://discord.gg/zSw58e9Uvf
+Discord: https://discord.gg/zSw58e9Uvf
 
-<a href="https://discord.gg/zSw58e9Uvf">![image](https://user-images.githubusercontent.com/81808867/166115186-70de12b2-39fd-4eda-bb12-c1d8bec24ac6.png)</a>
+Telegram: https://t.me/aadresearch
+
+<hr>
 
 To start trading on Bybit please register here: [https://bybit.com](https://www.bybit.com/en-US/invite?ref=P11NJW)<br>
 On Binance here: [https://binance.com](https://www.binance.com/en/activity/referral-entry/CPA?fromActivityPage=true&ref=CPA_00T5P4X8R6)
-
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
