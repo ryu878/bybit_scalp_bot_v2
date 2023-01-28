@@ -38,8 +38,3 @@ Under no circumstances will we be responsible or liable for any claims, damages,
 Discord: https://discord.gg/zSw58e9Uvf
 
 Telegram: https://t.me/aadresearch
-
-<hr>
-
-To start trading on Bybit please register here: [https://bybit.com](https://www.bybit.com/en-US/invite?ref=P11NJW)<br>
-On Binance here: [https://binance.com](https://www.binance.com/en/activity/referral-entry/CPA?fromActivityPage=true&ref=CPA_00T5P4X8R6)
