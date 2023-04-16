@@ -18,7 +18,7 @@ Install libraries:
 
 <code>pip install pandas</code>
 
-<code>pip install pybit</code>
+<code>pip install pybit==2.4.1</code>
 
 <code>pip install python-binance</code>
 
