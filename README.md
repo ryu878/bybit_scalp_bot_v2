@@ -36,6 +36,8 @@ Discord: https://discord.gg/zSw58e9Uvf
 
 Telegram: https://t.me/aadresearch
 
+Join me at Bybit and earn exclusive rewards with Bybit's Referral Program! Up to 1,025 USDT in rewards await you. https://www.bybit.com/invite?ref=P11NJW
+
 ## VPS for bots and scripts
 I prefer using DigitalOcean.
   
