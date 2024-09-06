@@ -7,7 +7,9 @@ I have received a letter from Bybit Exchange:
 I must admit that this is totally scam behaviour from the exchange. I have a lot of referees and as I know a lot of them have passed KYC. Sometimes I help traders with trades on their accounts but I neved registered another account for myself to receive comission. But Bybit say that "According to our statistics, we found out that most users who have successfully registered using your referral link created their accounts using the same IP address." This is total lie. I can't register account for users.
 
 Let it be CLEAR, that since Bybit violate their own rules and scam users and I'll not receive a Referral commission anymore from that scam exchange, this project is closed and there will be no more updates.
-I'll move all my code to Binance, OKX etc soon. 
+I'll move all my code to Binance, OKX etc soon.
+
+By their actions they undermine my authority and I can no longer recommend trading on this platform.
 
 ⛔    BYBIT Exchange Affiliate Program SCAM ALERT ⛔ 
 
