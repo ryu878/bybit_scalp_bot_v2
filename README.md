@@ -2,7 +2,7 @@
 
 I have received a letter from Bybit Exchange:
 
-"After a thorough internal investigation conducted by our risk team, your account was being flagged out from receiving Referral commissions due to a violation of our Terms of Service and Bonus...                                                            Let it be clear that this decision is final and we will not accommodate any further appeals regarding the matter."        
+[i]"After a thorough internal investigation conducted by our risk team, your account was being flagged out from receiving Referral commissions due to a violation of our Terms of Service and Bonus...                                                            Let it be clear that this decision is final and we will not accommodate any further appeals regarding the matter." [/i]       
 
 I must admit that this is totally scam behaviour from the exchange. I have a lot of referees and as I know a lot of them have passed KYC. Sometimes I help traders with to setup their accounts. That's why Bybit say that "According to our statistics, we found out that most users who have successfully registered using your referral link created their accounts using the same IP address." This is total lie. I can't register account for users.
 
