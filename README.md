@@ -1,13 +1,21 @@
 ⛔    BYBIT Exchange Affiliate Program SCAM ALERT ⛔ 
 
+
 I have received a letter from Bybit Exchange:
 
 * "After a thorough internal investigation conducted by our risk team, your account was being flagged out from receiving Referral commissions due to a violation of our Terms of Service and Bonus...                                                            Let it be clear that this decision is final and we will not accommodate any further appeals regarding the matter."   
 
 I must admit that this is totally scam behaviour from the exchange. I have a lot of referees and as I know a lot of them have passed KYC. Sometimes I help traders with trades on their accounts but I neved registered another account for myself to receive comission. But Bybit say that "According to our statistics, we found out that most users who have successfully registered using your referral link created their accounts using the same IP address." This is total lie. I can't register account for users.
 
-Let it be CLEAR, that since Bybit violate their own rules and scam users and I'll not receive a Referral commission anymore from that scam exchange, this project is closed and there will be no more updates.
-I'll move all my code to Binance, OKX etc soon.
+Also I sent email to them regargind my ref id P11NJW. But there is no answer as well.
+
+So then let it be CLEAR, that since 
+* Bybit violate their own rules
+* Bybit scam users
+* I'll not receive a Referral commission anymore
+* They don't reply and there is no support
+
+this project is closed and there will be no more updates. I'll move all my code to Binance, OKX etc soon.
 
 By their actions they undermine my authority and I can no longer recommend trading on this platform.
 
@@ -30,7 +38,6 @@ By their actions they undermine my authority and I can no longer recommend tradi
 `
 
 `
-
 
 # Bybit Scalp Bot V2.14 <a href="https://github.com/ryu878/bybit_scalp_bot/blob/main/LICENSE.MD">[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://aadresearch.xyz) [![Generic badge](https://img.shields.io/badge/Python-3.8+-<COLOR>.svg)](https://aadresearch.xyz) 
   
