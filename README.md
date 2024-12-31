@@ -34,8 +34,6 @@ To contact me:
 
 Discord: https://discord.gg/zSw58e9Uvf
 
-Telegram: https://t.me/aadresearch
-
 ## VPS for bots and scripts
 I prefer using DigitalOcean.
   
