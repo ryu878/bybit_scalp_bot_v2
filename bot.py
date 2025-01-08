@@ -22,7 +22,7 @@ import random
 import sqlite3
 import datetime
 import pandas as pd
-from config import *
+from _config import *
 from inspect import currentframe
 from pybit import usdt_perpetual
 from binance.client import Client
