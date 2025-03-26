@@ -49,6 +49,8 @@ Discord: https://discord.gg/zSw58e9Uvf
 
 🐀 Join Bybit: https://www.bybit.com/invite?ref=P11NJW
 
+👍 MEXC: https://promote.mexc.com/r/f3dtDLZK
+
 😎 Register on BingX and get a **20% discount** on fees: https://bingx.com/invite/HAJ8YQQAG/
 
 ## VPS for bots and scripts
