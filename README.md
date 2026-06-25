@@ -69,6 +69,6 @@ Experience across crypto (CEX, DEX), FX, and exchange-traded markets.
 
 ## Contact
 
-Email: ryu8777@gmail.com
-
+- **Email:** ryu8777@gmail.com
+- **Telegram:** @ryu8777
 ***
